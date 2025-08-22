@@ -1,38 +1,28 @@
-i#!/bin/bash
-echo "Select operation"
-echo "================================"
-echo "1.Addition"
-echo "2.Subtraction"
-echo "3.Multiplication"
-echo "4.Division"
-echo "*---------*-----------*----------*"
-read -p "Enter your choice (1 - 4): " choice
-read -p "Enter first number: " num1
-read -p "Enter second number: " num2
+#!/bin/bash
+echo "1) Addition"
+echo "2) Subtraction"
+echo "3) Multiplication"
+echo "4) Division"
+echo "Choose the operator [1-4]:"
+read op
+echo "Enter first input:"
+read a
+echo "Enter second input:"
+read b
+if  [ "$op" = "1" ]
+then 
+	echo "$result = $(( a + b ))"
+elif [ "$op" = "2" ]
+then
+	echo "$result = $(( a - b ))"
+elif [ "$op" = "3" ]
+then
+	echo "$result = $(( a * b))"
+elif [ "$op" = "4" ]
+then
+	echo "$result = $(( a / b ))"
+else 
+	echo "INVALID OPERATOR"
+fi
 
-case $choice in
-1)
-	result=$((num1 + num2))
-	echo "$num1 + $num2 = $result"
-	;;
-2)
-	result=$((num1 - num2))
-	echo "$num1 - $num2 = $result"
-	;;
-3)
-	result=$((num1 * num2))
-	echo "$num1 * $num2 = $result"
-	;;
-4)
-	if [ $num2 -ne 0 ]; then
-		result=$((num1 / num2))
-		echo "$num1 / $num2 = $result"
-	else 
-		echo "Error Division by zero is not allowed."
-	fi
-	;;
-*)
-	echo "Invalid choice! Please select 1,2,3 or 4."
-	;;
-esac
 
