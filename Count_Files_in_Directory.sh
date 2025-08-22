@@ -21,3 +21,10 @@ elif [ "$fil" -eq 2 ]; then
 else
     echo "Invalid choice! Please enter 1 or 2."
 fi
+if [ .txt != 1 ]
+	touch $fil=filename
+then
+else 
+	echo ".txt file is present"
+fi
+
